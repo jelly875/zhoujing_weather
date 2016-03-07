@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- 顶部背景颜色 -->
+    <color name="main_color">#FF9800</color>
+    <color name="kyblue">#007fff</color>
+    <color name="menu_bac">#00BCD4</color>
+    <color name="pur">#7f00ff</color>
 </resources>

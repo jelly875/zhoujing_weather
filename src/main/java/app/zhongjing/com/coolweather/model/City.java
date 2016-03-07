@@ -1,9 +1,11 @@
 package app.zhongjing.com.coolweather.model;
 
+import java.io.Serializable;
+
 /**
  * Created by chenjun on 16/3/2.
  */
-public class City {
+public class City implements Serializable{
 
     private int id;
     private String cityName;

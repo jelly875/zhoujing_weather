@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +86,7 @@ public class CoolWeatherDB {
      */
     public List<City> loadCities(int provinceId){
         List<City> list = new ArrayList<City>();
-        Cursor cursor = database.query(DBConfig.TB_CITY,null,null,null,null,null,null);
+        Cursor cursor = database.query(DBConfig.TB_CITY,null,"province_id = ?",new String[]{String.valueOf(provinceId)},null,null,null);
         if (cursor.moveToFirst()){
             do {
                 City city = new City();
@@ -120,7 +121,7 @@ public class CoolWeatherDB {
      */
     public List<County> loadCounties(int cityId){
         List<County> list = new ArrayList<County>();
-        Cursor cursor = database.query(DBConfig.TB_COUNTY,null,null,null,null,null,null);
+        Cursor cursor = database.query(DBConfig.TB_COUNTY,null,"city_id = ?",new String[]{String.valueOf(cityId)},null,null,null);
         if (cursor.moveToFirst()){
             do {
                 County county = new County();
@@ -128,6 +129,7 @@ public class CoolWeatherDB {
                 county.setCountyName(cursor.getString(cursor.getColumnIndex("county_name")));
                 county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_code")));
                 county.setCityId(cityId);
+                list.add(county);
             }while (cursor.moveToNext());
             if (cursor != null){
                 cursor.close();

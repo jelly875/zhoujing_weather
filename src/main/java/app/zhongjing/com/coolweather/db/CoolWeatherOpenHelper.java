@@ -13,7 +13,7 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper{
     /**
      * province表建表语句
      */
-    private static final String CREATE_PROVINCE = "create if not exists province("
+    private static final String CREATE_PROVINCE = "create table if not exists province("
             +"id integer primary key autoincrement,"
             +"province_name text,"
             +"province_code text)";
@@ -21,7 +21,7 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper{
     /**
      * city表建表语句
      */
-    private static final String CREATE_CITY = "create if not exists city("
+    private static final String CREATE_CITY = "create table if not exists city("
             +"id integer primary key autoincrement,"
             +"city_name text,"
             +"city_code text,"
@@ -30,7 +30,7 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper{
     /**
      *county表建表语句
      */
-    private static final String CREATE_COUNTY = "create if not exists county ("
+    private static final String CREATE_COUNTY = "create table if not exists county ("
             +"id integer primary key autoincrement,"
             +"county_name text,"
             +"county_code text,"
