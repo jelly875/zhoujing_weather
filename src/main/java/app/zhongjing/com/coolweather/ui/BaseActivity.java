@@ -55,13 +55,13 @@ public class BaseActivity extends AppCompatActivity{
                 Log.i("chan", "onSuccess");
                 boolean result = false;
                 if ("province".equals(type)) {
-                    Log.i("chan","response body : "+response);
+                    //Log.i("chan","response body : "+response);
                     result = ParseUtil.handleProvincesResponse(db, response);
                 } else if ("city".equals(type)) {
-                    Log.i("chan","response body : "+response);
+                    //Log.i("chan","response body : "+response);
                     result = ParseUtil.handleCitiesResponse(db, response, selectedProvince.getId());
                 } else if ("county".equals(type)) {
-                    Log.i("chan","response body : "+response);
+                    //Log.i("chan","response body : "+response);
                     result = ParseUtil.handleCountiesResponse(db, response, selectedCity.getId());
                 }
                 if (result) {

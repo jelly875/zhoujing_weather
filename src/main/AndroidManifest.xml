@@ -6,12 +6,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/weather_02"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+
+        <service android:name=".service.AutoUpdateService"/>
+        <receiver android:name=".AutoUpdateReceiver"/>
+
         <activity
-            android:name=".ui.ChooseAreaActivity"
+            android:name=".ui.WeatherInfoActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,13 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ChooseAreaCityActivity"/>
-        <activity android:name=".ui.ChooseAreaCountyActivity"/>
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+        <activity
+            android:name=".ui.ChooseAreaCityActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".ui.ChooseAreaCountyActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".ui.ChooseAreaActivity"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>

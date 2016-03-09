@@ -9,6 +9,8 @@ public class AppConfig {
 
     public static final String ADDRESS = "http://www.weather.com.cn/data/list3/city";
     public static final String ADDRESS_SUFFIX = ".xml";
+    public static final String WEATHER_INFO = "http://www.weather.com.cn/data/cityinfo/";
+    public static final String WEATHER_INFO_SUFFIX = ".html";
 
     public static String getAddress(final String code){
         String address;
@@ -17,6 +19,11 @@ public class AppConfig {
         }else{
             address = ADDRESS + ADDRESS_SUFFIX;
         }
+        return address;
+    }
+
+    public static String getWeatherInfoAddress(final String code){
+        String address = WEATHER_INFO+code+WEATHER_INFO_SUFFIX;
         return address;
     }
 }

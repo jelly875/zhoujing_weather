@@ -106,7 +106,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.AreaVH>{
                     } else if (currentLevel == LEVEL_CITY){
                         OpenActivityUtil.goToCountyActivity(context,cityList.get(getPosition()));
                     } else if(currentLevel == LEVEL_COUNTY){
-
+                        OpenActivityUtil.goToWeatherInfoActivity(context,countyList.get(getPosition()));
                     }
 
                 }
